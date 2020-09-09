@@ -24,19 +24,22 @@ import com.google.gson.annotations.SerializedName;
 public class Internals {
 
   public static final String SERIALIZED_APPLICATION_SERVER = "application-server";
+  public static final String SERIALIZED_CAMUNDA_INTEGRATION = "camunda-integration";
 
   protected Database database;
   @SerializedName(value = SERIALIZED_APPLICATION_SERVER)
   protected ApplicationServer applicationServer;
   protected Map<String, Command> commands;
+  @SerializedName(value = SERIALIZED_CAMUNDA_INTEGRATION)
+  protected Map<String, Object> camundaIntegration;
 
   protected Map<String, Metric> metrics;
 
   public Internals(Database database, ApplicationServer server) {
-    super();
     this.database = database;
     this.applicationServer = server;
     this.commands = new HashMap<>();
+    this.camundaIntegration = new HashMap<>();
   }
 
   public Database getDatabase() {
@@ -69,6 +72,14 @@ public class Internals {
 
   public void setMetrics(Map<String, Metric> metrics) {
     this.metrics = metrics;
+  }
+
+  public Map<String, Object> getCamundaIntegration() {
+    return camundaIntegration;
+  }
+
+  public void setCamundaIntegration(Map<String, Object> camundaIntegration) {
+    this.camundaIntegration = camundaIntegration;
   }
 
 }
