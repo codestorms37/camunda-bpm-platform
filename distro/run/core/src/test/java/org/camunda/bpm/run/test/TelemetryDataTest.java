@@ -41,7 +41,7 @@ public class TelemetryDataTest {
 
   @Test
   public void shouldAddCamundaIntegration() {
-    // given default configuration
+    // given
     ProcessEngineConfigurationImpl processEngineConfiguration = (ProcessEngineConfigurationImpl) engine.getProcessEngineConfiguration();
 
     // then
